@@ -48,23 +48,6 @@ public class DriveTrain extends SubsystemBase {
         rightMotorFront.set(ControlMode.PercentOutput, rightPercent);
     }
 
-    public void tankDrive(double leftY, double rightY) {
-        System.out.println(rightY);
-        System.out.println(leftY);
-        if ( Math.abs(leftY) > DriveConstants.deadzone ) {
-            leftMotorFront.set(ControlMode.PercentOutput, leftY*DriveConstants.speedMultiplier);
-        } else {
-            leftMotorFront.set(ControlMode.PercentOutput, 0.0);
-        }
-      
-        if ( Math.abs(rightY) > DriveConstants.deadzone) {
-            rightMotorFront.set(ControlMode.PercentOutput, rightY*DriveConstants.speedMultiplier);
-        } else {
-            rightMotorFront.set(ControlMode.PercentOutput, 0.0);
-        }
-        
-    }
-
     public void disableMotors() {
         leftMotorFront.set(ControlMode.PercentOutput, 0);
         rightMotorFront.set(ControlMode.PercentOutput, 0);
