@@ -34,6 +34,14 @@ public class TankDrive extends CommandBase {
         addRequirements(drivetrain);
     }
 
+    public TankDrive(DriveTrain drivetrain, XboxController driver, double speedMultiplier) {
+        this.driveTrain = drivetrain;
+        this.driverController = driver;
+        this.deadzone = DriveConstants.deadzone;
+        this.speedMultiplier = speedMultiplier;
+        addRequirements(drivetrain);
+    }
+
     @Override
     public void execute() {
         leftY = this.driverController.getY(Hand.kLeft);
