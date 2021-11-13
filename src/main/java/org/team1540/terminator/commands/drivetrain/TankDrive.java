@@ -1,6 +1,5 @@
 package org.team1540.terminator.commands.drivetrain;
 
-
 import org.team1540.terminator.Constants.DriveConstants;
 
 import edu.wpi.first.wpilibj.XboxController;
@@ -10,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class TankDrive extends CommandBase {
     private final DriveTrain driveTrain;
     private final XboxController driverController;
+
     private final double deadzone;
     private final double speedMultiplier;
 
@@ -17,7 +17,7 @@ public class TankDrive extends CommandBase {
     private double rightY;
     private double leftSpeed;
     private double rightSpeed;
-    
+
     public TankDrive(DriveTrain drivetrain, XboxController driver, double deadzone, double speedMultiplier) {
         this.driveTrain = drivetrain;
         this.driverController = driver;
@@ -46,16 +46,15 @@ public class TankDrive extends CommandBase {
     public void execute() {
         leftY = this.driverController.getY(Hand.kLeft);
         rightY = this.driverController.getY(Hand.kRight);
-        
-        
-        if ( Math.abs(leftY) > deadzone ) {
-            leftSpeed = leftY*this.speedMultiplier;
+
+        if (Math.abs(leftY) > deadzone) {
+            leftSpeed = leftY * this.speedMultiplier;
         } else {
             leftSpeed = 0;
         }
-    
-        if ( Math.abs(rightY) > deadzone ) {
-            rightSpeed = rightY*this.speedMultiplier;
+
+        if (Math.abs(rightY) > deadzone) {
+            rightSpeed = rightY * this.speedMultiplier;
         } else {
             rightSpeed = 0;
         }
