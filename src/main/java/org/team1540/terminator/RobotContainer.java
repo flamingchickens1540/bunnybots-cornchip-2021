@@ -6,16 +6,16 @@ import edu.wpi.first.wpilibj.XboxController;
 
 public class RobotContainer {
 
-    private final XboxController driverController = new XboxController(0);
+    public final XboxController driverController = new XboxController(0);
     private final XboxController copilotController = new XboxController(1);
 
-    private final DriveTrain driveTrain = new DriveTrain();
+    public final DriveTrain driveTrain = new DriveTrain();
 
     public RobotContainer() {
         // Configure the button bindings
         configureButtonBindings();
 
-        driveTrain.setDefaultCommand(new TankDrive(driveTrain, driverController));
+        
     }
 
     private void configureButtonBindings() {
@@ -28,6 +28,6 @@ public class RobotContainer {
      * @return the command to run in autonomous
      */
     public void getAutonomousCommand() {
-        // An ExampleCommand will run in autonomous
     }
+    
 }
