@@ -1,11 +1,9 @@
 package org.team1540.terminator.commands.drivetrain;
 
-import java.util.ResourceBundle.Control;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
-
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -22,13 +20,16 @@ public class DriveTrain extends SubsystemBase {
     private final TalonFX rightDriveMotors[] = { rightMotorFront, rightMotorRear };
 
     public DriveTrain() {
-        initMotors();
+        initMotors(NeutralMode.Coast);
+    }
+    public DriveTrain(NeutralMode brakeType) {
+        initMotors(brakeType);
     }
 
-    private void initMotors() {
+    private void initMotors(NeutralMode brakeType) {
         for (TalonFX motor : driveMotors) {
             motor.configFactoryDefault();
-            motor.setNeutralMode(NeutralMode.Coast);
+            motor.setNeutralMode(brakeType);
         }
         // Set configuration for left motors
         for (TalonFX motor : leftDriveMotors) {

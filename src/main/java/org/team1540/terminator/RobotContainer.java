@@ -1,5 +1,7 @@
 package org.team1540.terminator;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+
 import org.team1540.terminator.commands.drivetrain.*;
 
 import edu.wpi.first.wpilibj.XboxController;
@@ -9,7 +11,7 @@ public class RobotContainer {
     public final XboxController driverController = new XboxController(0);
     private final XboxController copilotController = new XboxController(1);
 
-    public final DriveTrain driveTrain = new DriveTrain();
+    public final DriveTrain driveTrain = new DriveTrain(NeutralMode.Brake);
 
     public RobotContainer() {
         // Configure the button bindings
