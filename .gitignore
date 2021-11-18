@@ -169,10 +169,11 @@ local.properties
 
 # Zach
 
-/vendordeps/Phoenix.json
-/motor-dependencies
-/transition.sh
+
+
+
 imgui.ini
 src/main/java/org/team1540/robot2020
-/other
 /avian
+.wpilib
+Bin
