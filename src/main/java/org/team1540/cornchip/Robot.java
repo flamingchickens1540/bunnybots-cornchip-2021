@@ -1,9 +1,9 @@
-package org.team1540.terminator;
+package org.team1540.cornchip;
 
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
-import org.team1540.terminator.commands.drivetrain.AvianDrive;
-import org.team1540.terminator.commands.drivetrain.TankDrive;
+import org.team1540.cornchip.commands.drivetrain.AvianDrive;
+import org.team1540.cornchip.commands.drivetrain.TankDrive;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 

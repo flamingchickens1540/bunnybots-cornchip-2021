@@ -1,4 +1,4 @@
-package org.team1540.terminator;
+package org.team1540.cornchip;
 
 public class Constants {
     public static final class DriveConstants {

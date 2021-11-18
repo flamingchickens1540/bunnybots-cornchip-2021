@@ -5,7 +5,7 @@
 /* the project.                                                               */
 
 /*----------------------------------------------------------------------------*/
-package org.team1540.terminator;
+package org.team1540.cornchip;
 
 import edu.wpi.first.wpilibj.RobotBase;
 

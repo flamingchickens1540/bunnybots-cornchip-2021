@@ -1,4 +1,4 @@
-package org.team1540.terminator.commands.drivetrain;
+package org.team1540.cornchip.commands.drivetrain;
 
 
 import com.ctre.phoenix.motorcontrol.ControlMode;

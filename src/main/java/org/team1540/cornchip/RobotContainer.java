@@ -1,8 +1,8 @@
-package org.team1540.terminator;
+package org.team1540.cornchip;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
-import org.team1540.terminator.commands.drivetrain.*;
+import org.team1540.cornchip.commands.drivetrain.*;
 
 import edu.wpi.first.wpilibj.XboxController;
 
