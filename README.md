@@ -1,3 +1,1 @@
-# Rutmanz Robot Code
-
-The code for miscellaneous robot code stuff
+# Bunnybots Cornchip 2021
