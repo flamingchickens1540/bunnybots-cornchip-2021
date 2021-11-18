@@ -176,4 +176,5 @@ imgui.ini
 src/main/java/org/team1540/robot2020
 /avian
 .wpilib
-Bin
+bin
+.project
