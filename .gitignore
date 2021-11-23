@@ -178,3 +178,5 @@ src/main/java/org/team1540/robot2020
 .wpilib
 bin
 .project
+.classpath
+org.eclipse.buildship.core.prefs
