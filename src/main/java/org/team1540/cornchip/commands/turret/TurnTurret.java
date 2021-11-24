@@ -13,7 +13,6 @@ public class TurnTurret extends CommandBase {
     private final double deadzone;
     private double multiplierMinimum;
     private double speedMultiplier;
-    private double multiplier;
 
     private double joystickX, joystickZ;
 
@@ -33,14 +32,14 @@ public class TurnTurret extends CommandBase {
         addRequirements(turret);
     }
 
-    private double calculateSpeedMultiplier(double rawValue) {
+    private void calculateSpeedMultiplier(double rawValue) {
         multiplierMinimum = SmartDashboard.getNumber("turret/speedMinimum", 0);
-        multiplier = (rawValue+1)/2;
-        if (multiplier < multiplierMinimum) {
-            multiplier = multiplierMinimum;
+        speedMultiplier = (rawValue+1)/2;
+        if (speedMultiplier < multiplierMinimum) {
+            speedMultiplier = multiplierMinimum;
         }
-        return multiplier;
     }
+
 
     @Override
     public void execute() {
@@ -48,7 +47,7 @@ public class TurnTurret extends CommandBase {
         joystickX = joystick.getX();
         joystickZ = joystick.getZ();
 
-        speedMultiplier = calculateSpeedMultiplier(joystickZ);
+        calculateSpeedMultiplier(joystickZ);
         if (Math.abs(joystickX) > deadzone) {
             turret.setPercent(joystickX * speedMultiplier);
         } else {
