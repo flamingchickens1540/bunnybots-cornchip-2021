@@ -37,6 +37,7 @@ public class RobotContainer {
 
     private void initSmartDashboard() {
         SmartDashboard.putNumber("turret/speedMinimum", SmartDashboard.getNumber("turret/speedMinimum", 0.1));
+        SmartDashboard.putNumber("turret/disableButton", SmartDashboard.getNumber("turret/disableButton", 2));
     }
     
 }

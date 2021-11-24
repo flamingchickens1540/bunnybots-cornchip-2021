@@ -40,10 +40,17 @@ public class TurnTurret extends CommandBase {
         }
     }
 
+    private boolean checkDisabled() {
+        int buttonIndex = (int) SmartDashboard.getNumber("turret/disableButton", 0);
+        return joystick.getRawButton(buttonIndex);
+    }
 
     @Override
     public void execute() {
-
+        if (checkDisabled()) {
+            turret.setPercent(0);
+            return;
+        }
         joystickX = joystick.getX();
         joystickZ = joystick.getZ();
 
