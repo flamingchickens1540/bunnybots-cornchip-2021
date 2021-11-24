@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Joystick.ButtonType;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
 
@@ -23,21 +24,36 @@ public class RobotContainer {
     public final Turret turret = new Turret(NeutralMode.Brake);
     public final Shooter shooter = new Shooter(IdleMode.kBrake);
 
+    private boolean shootConfirmation;
+
     public RobotContainer() {
-        // Configure the button bindings
-        configureButtonBindings();
+        // Configure the button bindings\
+
+        
         initSmartDashboard();
+        configureButtonBindings();
+
 
     }
 
     private void configureButtonBindings() {
-        new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
-            .whenHeld(new ShootCommand(shooter));
+        shootConfirmation = SmartDashboard.getBoolean("turret/shootConfirmation", true);
+        if (shootConfirmation) {
+            new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
+                .and(new JoystickButton(copilotJoystick, 3))
+                .whileActiveOnce(new ShootCommand(shooter));
+        } else {
+            new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
+                .whenHeld(new ShootCommand(shooter));
+        }
+        
     }
 
     private void initSmartDashboard() {
         SmartDashboard.putNumber("turret/speedMinimum", SmartDashboard.getNumber("turret/speedMinimum", 0.1));
         SmartDashboard.putNumber("turret/disableButton", SmartDashboard.getNumber("turret/disableButton", 2));
+        // SmartDashboard.putBoolean("turret/shootConfirmation", SmartDashboard.getBoolean("turret/shootConfirmation", true));
+        SmartDashboard.setDefaultBoolean("turret/shootConfirmation", true);
     }
     
 }
