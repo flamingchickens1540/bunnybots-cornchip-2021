@@ -5,7 +5,7 @@
 /* the project.                                                               */
 
 /*----------------------------------------------------------------------------*/
-package org.team1540.cornchip;
+package org.team1540.doofenshmirtz;
 
 import edu.wpi.first.wpilibj.RobotBase;
 

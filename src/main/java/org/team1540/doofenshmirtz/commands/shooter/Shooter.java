@@ -1,4 +1,4 @@
-package org.team1540.cornchip.commands.shooter;
+package org.team1540.doofenshmirtz.commands.shooter;
 
 
 import com.revrobotics.CANSparkMax;

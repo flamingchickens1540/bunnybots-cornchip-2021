@@ -1,6 +1,6 @@
-package org.team1540.cornchip.commands.turret;
+package org.team1540.doofenshmirtz.commands.turret;
 
-import org.team1540.cornchip.Constants.TurretConstants;
+import org.team1540.doofenshmirtz.Constants.TurretConstants;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -47,18 +47,24 @@ public class TurnTurret extends CommandBase {
 
     @Override
     public void execute() {
+
+        // Exit if the disable button is held
+
         if (checkDisabled()) {
             turret.setPercent(0);
             return;
         }
+
         joystickX = joystick.getX();
         joystickZ = joystick.getZ();
-
+        
+        // Use joystick's Z for speed multiplier
         calculateSpeedMultiplier(joystickZ);
+
         if (Math.abs(joystickX) > deadzone) {
             turret.setPercent(joystickX * speedMultiplier);
         } else {
-            turret.setPercent(0);
+            turret.disableMotors();
         }
     }
 }

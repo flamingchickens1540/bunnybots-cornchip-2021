@@ -1,4 +1,4 @@
-package org.team1540.cornchip.commands.shooter;
+package org.team1540.doofenshmirtz.commands.shooter;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 

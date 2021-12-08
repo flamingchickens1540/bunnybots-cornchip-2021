@@ -1,6 +1,6 @@
-package org.team1540.cornchip.commands.drivetrain;
+package org.team1540.doofenshmirtz.commands.drivetrain;
 
-import org.team1540.cornchip.Constants.DriveConstants;
+import org.team1540.doofenshmirtz.Constants.DriveConstants;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
