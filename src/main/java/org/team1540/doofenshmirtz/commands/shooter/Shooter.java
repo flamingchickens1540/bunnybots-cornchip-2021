@@ -1,36 +1,37 @@
 package org.team1540.doofenshmirtz.commands.shooter;
 
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.IdleMode;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;;
 
 public class Shooter extends SubsystemBase {
-    private final CANSparkMax valveMotor = new CANSparkMax(5, MotorType.kBrushless);
+    private final TalonSRX valveMotor = new TalonSRX(7);
 
     public Shooter() {
-        initMotors(IdleMode.kCoast);
+        initMotors(NeutralMode.Brake);
     }
-    public Shooter(IdleMode brakeType) {
+    public Shooter(NeutralMode brakeType) {
         initMotors(brakeType);
     }
 
-    private void initMotors(IdleMode brakeType) {
-        valveMotor.setIdleMode(brakeType);
-        valveMotor.restoreFactoryDefaults();
+    private void initMotors(NeutralMode brakeType) {
+        valveMotor.configFactoryDefault();
+        valveMotor.setNeutralMode(brakeType);
         valveMotor.setInverted(false);
 
     }
 
     public void setState(boolean open) {
         if (open) {
-            valveMotor.set(0.5);
+            valveMotor.set(ControlMode.PercentOutput, 1);
         } else {
-            valveMotor.set(0);
+            valveMotor.set(ControlMode.PercentOutput, 0);
         }
     }
 
