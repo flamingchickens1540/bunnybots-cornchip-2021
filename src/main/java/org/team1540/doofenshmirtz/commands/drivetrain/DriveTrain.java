@@ -10,10 +10,10 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;;
 
 public class DriveTrain extends SubsystemBase {
-    private final TalonFX leftMotorFront = new TalonFX(1);
-    private final TalonFX leftMotorRear = new TalonFX(2);
-    private final TalonFX rightMotorFront = new TalonFX(3);
-    private final TalonFX rightMotorRear = new TalonFX(4);
+    private final TalonFX leftMotorFront = new TalonFX(4);
+    private final TalonFX leftMotorRear = new TalonFX(3);
+    private final TalonFX rightMotorFront = new TalonFX(6);
+    private final TalonFX rightMotorRear = new TalonFX(2);
 
     private final TalonFX driveMotors[] = { leftMotorFront, leftMotorRear, rightMotorFront, rightMotorRear };
     private final TalonFX leftDriveMotors[] = { leftMotorFront, leftMotorRear };
