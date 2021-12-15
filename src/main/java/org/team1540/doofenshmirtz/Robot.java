@@ -32,17 +32,12 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
         robotContainer.driveTrain.setDefaultCommand(new AvianDrive(robotContainer.driveTrain));
+        robotContainer.turret.setDefaultCommand(new InstantCommand(() -> {}));
+        robotContainer.pump.setDefaultCommand(new InstantCommand(() -> {}));
     }
 
     @Override
-    public void testInit() {
-        robotContainer.driveTrain.setDefaultCommand(new TankDrive(robotContainer.driveTrain, robotContainer.driverController));
-    }
-    @Override
-    public void testPeriodic() {
-        System.out.println(robotContainer.navx.getYaw());
-        if (robotContainer.copilotJoystick.getRawButtonPressed(4)) {
-            robotContainer.navx.zeroYaw();
-        }
+    public void disabledInit() {
+        System.out.println("Disabled");
     }
 }
