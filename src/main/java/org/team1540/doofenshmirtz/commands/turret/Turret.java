@@ -11,38 +11,46 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;;
 
 public class Turret extends SubsystemBase {
-    private final TalonSRX turretMotor = new TalonSRX(8);
-    public double currentRotation, baseRotation;
-    private AHRS navx;
+    public final TalonSRX turretMotor = new TalonSRX(5);
+    public double currentRotation, baseRotation, degreesSetpoint;
+    public int threshold = this.degreesToSensorUnits(180);
     public Turret(AHRS navx) {
-        this.navx = navx;
         initMotors(NeutralMode.Coast);
 
     }
     public Turret(AHRS navx, NeutralMode brakeType) {
-        this.navx = navx;
         initMotors(brakeType);
     }
+    
 
     private void initMotors(NeutralMode brakeType) {
         
         turretMotor.configFactoryDefault();
         turretMotor.setNeutralMode(brakeType);
 
+        turretMotor.configReverseSoftLimitEnable(true);
+        turretMotor.configForwardSoftLimitEnable(true);
+
+        turretMotor.configReverseSoftLimitThreshold(-threshold);
+        turretMotor.configForwardSoftLimitThreshold(threshold);
     }
 
-    public void counterRotate() {
-        baseRotation = navx.getAngle();
-        this.setDegrees(-0);
-    }
 
     public void setPercent(double percent) {
-        turretMotor.set(ControlMode.PercentOutput, percent);
+        System.out.println(percent);
+        turretMotor.set(ControlMode.PercentOutput,percent);
     }
 
-    public void setDegrees(double percent) {
-        currentRotation = turretMotor.getSelectedSensorPosition();
-        turretMotor.set(ControlMode.Position, currentRotation+percent);
+    public void zeroRotation() {
+        turretMotor.setSelectedSensorPosition(0);
+    }
+
+    public int degreesToSensorUnits(double degrees) {
+        return (int) degrees*(4096/180);
+    }
+    
+    public double getDegrees() {
+        return turretMotor.getSelectedSensorPosition()/(4096/180);
     }
 
     public void disableMotors() {
