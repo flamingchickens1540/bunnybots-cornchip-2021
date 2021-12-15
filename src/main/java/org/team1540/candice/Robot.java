@@ -1,9 +1,9 @@
-package org.team1540.doofenshmirtz;
+package org.team1540.candice;
 
-import org.team1540.doofenshmirtz.commands.drivetrain.AvianDrive;
-import org.team1540.doofenshmirtz.commands.drivetrain.TankDrive;
-import org.team1540.doofenshmirtz.commands.pump.PumpCommand;
-import org.team1540.doofenshmirtz.commands.turret.TurnTurret;
+import org.team1540.candice.commands.drivetrain.AvianDrive;
+import org.team1540.candice.commands.drivetrain.TankDrive;
+import org.team1540.candice.commands.pump.PumpCommand;
+import org.team1540.candice.commands.turret.TurnTurret;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;

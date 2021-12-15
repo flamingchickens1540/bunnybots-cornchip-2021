@@ -1,15 +1,15 @@
-package org.team1540.doofenshmirtz;
+package org.team1540.candice;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.revrobotics.CANSparkMax.IdleMode;
 
-import org.team1540.doofenshmirtz.commands.drivetrain.DriveTrain;
-import org.team1540.doofenshmirtz.commands.pump.Pump;
-import org.team1540.doofenshmirtz.commands.shooter.ShootCommand;
-import org.team1540.doofenshmirtz.commands.shooter.Shooter;
-import org.team1540.doofenshmirtz.commands.turret.Turret;
-import org.team1540.doofenshmirtz.commands.turret.ZeroNavX;
-import org.team1540.doofenshmirtz.commands.turret.ZeroTurret;
+import org.team1540.candice.commands.drivetrain.DriveTrain;
+import org.team1540.candice.commands.pump.Pump;
+import org.team1540.candice.commands.shooter.ShootCommand;
+import org.team1540.candice.commands.shooter.Shooter;
+import org.team1540.candice.commands.turret.Turret;
+import org.team1540.candice.commands.turret.ZeroNavX;
+import org.team1540.candice.commands.turret.ZeroTurret;
 
 import com.kauailabs.navx.frc.AHRS;
 

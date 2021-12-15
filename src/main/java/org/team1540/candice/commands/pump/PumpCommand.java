@@ -1,4 +1,4 @@
-package org.team1540.doofenshmirtz.commands.pump;
+package org.team1540.candice.commands.pump;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;

@@ -1,4 +1,4 @@
-package org.team1540.doofenshmirtz;
+package org.team1540.candice;
 
 public class Constants {
     public static final class DriveConstants {

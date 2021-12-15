@@ -5,7 +5,7 @@
 /* the project.                                                               */
 
 /*----------------------------------------------------------------------------*/
-package org.team1540.doofenshmirtz;
+package org.team1540.candice;
 
 import edu.wpi.first.wpilibj.RobotBase;
 

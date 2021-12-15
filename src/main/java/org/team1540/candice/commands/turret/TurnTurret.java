@@ -1,6 +1,6 @@
-package org.team1540.doofenshmirtz.commands.turret;
+package org.team1540.candice.commands.turret;
 
-import org.team1540.doofenshmirtz.Constants.TurretConstants;
+import org.team1540.candice.Constants.TurretConstants;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
