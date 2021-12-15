@@ -1,14 +1,12 @@
 package org.team1540.candice;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
-import com.revrobotics.CANSparkMax.IdleMode;
 
 import org.team1540.candice.commands.drivetrain.DriveTrain;
 import org.team1540.candice.commands.pump.Pump;
 import org.team1540.candice.commands.shooter.ShootCommand;
 import org.team1540.candice.commands.shooter.Shooter;
 import org.team1540.candice.commands.turret.Turret;
-import org.team1540.candice.commands.turret.ZeroNavX;
 import org.team1540.candice.commands.turret.ZeroTurret;
 
 import com.kauailabs.navx.frc.AHRS;
@@ -18,7 +16,6 @@ import edu.wpi.first.wpilibj.Joystick.ButtonType;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 public class RobotContainer {
@@ -41,8 +38,6 @@ public class RobotContainer {
         
         initSmartDashboard();
         configureButtonBindings();
-
-
     }
 
 
