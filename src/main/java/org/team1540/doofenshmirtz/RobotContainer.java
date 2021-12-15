@@ -4,10 +4,12 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.revrobotics.CANSparkMax.IdleMode;
 
 import org.team1540.doofenshmirtz.commands.drivetrain.DriveTrain;
+import org.team1540.doofenshmirtz.commands.pump.Pump;
 import org.team1540.doofenshmirtz.commands.shooter.ShootCommand;
 import org.team1540.doofenshmirtz.commands.shooter.Shooter;
 import org.team1540.doofenshmirtz.commands.turret.Turret;
 import org.team1540.doofenshmirtz.commands.turret.ZeroNavX;
+import org.team1540.doofenshmirtz.commands.turret.ZeroTurret;
 
 import com.kauailabs.navx.frc.AHRS;
 
@@ -28,7 +30,8 @@ public class RobotContainer {
 
     public final DriveTrain driveTrain = new DriveTrain(NeutralMode.Brake);
     public final Turret turret = new Turret(navx, NeutralMode.Brake);
-    // public final Shooter shooter = new Shooter(IdleMode.kBrake);
+    public final Shooter shooter = new Shooter(NeutralMode.Brake);
+    public final Pump pump = new Pump();
 
     private boolean shootConfirmation;
 
