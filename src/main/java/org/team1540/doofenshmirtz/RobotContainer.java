@@ -45,7 +45,14 @@ public class RobotContainer {
 
     }
 
+
     private void configureButtonBindings() {
+        new JoystickButton(copilotJoystick, 6)
+            .whenPressed(new ZeroTurret(turret));
+
+            new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
+                    .and(new JoystickButton(copilotJoystick, 3))
+                    .whileActiveOnce(new ShootCommand(shooter));
         shootConfirmation = SmartDashboard.getBoolean("turret/shootConfirmation", true);
         // if (shootConfirmation) {
         //     new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
@@ -55,15 +62,12 @@ public class RobotContainer {
         //     new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
         //         .whenHeld(new ShootCommand(shooter));
         // }
-        new JoystickButton(copilotJoystick, 4)
-            .whenActive(new ZeroNavX(navx));
-        
     }
 
     private void initSmartDashboard() {
         SmartDashboard.putNumber("turret/speedMinimum", SmartDashboard.getNumber("turret/speedMinimum", 0.1));
         SmartDashboard.putNumber("turret/disableButton", SmartDashboard.getNumber("turret/disableButton", 2));
-        // SmartDashboard.putBoolean("turret/shootConfirmation", SmartDashboard.getBoolean("turret/shootConfirmation", true));
+        SmartDashboard.putBoolean("turret/shootConfirmation", SmartDashboard.getBoolean("turret/shootConfirmation", true));
         SmartDashboard.setDefaultBoolean("turret/shootConfirmation", true);
     }
     
