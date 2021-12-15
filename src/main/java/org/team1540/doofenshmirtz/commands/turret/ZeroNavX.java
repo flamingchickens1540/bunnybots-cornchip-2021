@@ -9,7 +9,7 @@ public class ZeroNavX extends CommandBase {
     }
     @Override
     public void execute() {
-        System.out.println("Zeroing");
+        System.out.println("Zeroing NavX");
         navx.zeroYaw();
     }
 }

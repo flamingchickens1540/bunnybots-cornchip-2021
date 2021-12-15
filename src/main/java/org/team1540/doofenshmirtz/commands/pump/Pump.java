@@ -28,7 +28,6 @@ public class Pump extends SubsystemBase {
     }
 
     public void setPercent(double percent) {
-        System.out.println(percent);
         pumpMotor.set(ControlMode.PercentOutput, percent);
     }
 

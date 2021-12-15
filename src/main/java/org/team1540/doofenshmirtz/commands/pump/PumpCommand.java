@@ -22,7 +22,6 @@ public class PumpCommand extends CommandBase {
         if (output > deadzone) {
             pump.setPercent(output);
         }
-        System.out.println("Executed");
     }
 
 }

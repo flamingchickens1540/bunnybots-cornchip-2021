@@ -37,7 +37,6 @@ public class Turret extends SubsystemBase {
 
 
     public void setPercent(double percent) {
-        System.out.println(percent);
         turretMotor.set(ControlMode.PercentOutput,percent);
     }
 

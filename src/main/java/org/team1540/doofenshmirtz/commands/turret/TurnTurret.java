@@ -60,7 +60,6 @@ public class TurnTurret extends CommandBase {
         
         // Use joystick's Z for speed multiplier
         calculateSpeedMultiplier(joystickZ);
-        // System.out.println(joystickX);
         if (Math.abs(joystickX) > deadzone) {
             turret.setPercent(joystickX * speedMultiplier);
         } else {
