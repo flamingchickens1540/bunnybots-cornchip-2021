@@ -8,6 +8,7 @@ import org.team1540.candice.commands.shooter.ShootCommand;
 import org.team1540.candice.commands.shooter.Shooter;
 import org.team1540.candice.commands.turret.Turret;
 import org.team1540.candice.commands.turret.ZeroTurret;
+import org.team1540.candice.commands.turret.DisableSoftLimit;
 
 import com.kauailabs.navx.frc.AHRS;
 
@@ -45,9 +46,12 @@ public class RobotContainer {
         new JoystickButton(copilotJoystick, 6)
             .whenPressed(new ZeroTurret(turret));
 
-            new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
-                    .and(new JoystickButton(copilotJoystick, 3))
-                    .whileActiveOnce(new ShootCommand(shooter));
+        new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
+                .and(new JoystickButton(copilotJoystick, 3))
+                .whileActiveOnce(new ShootCommand(shooter));
+
+        new JoystickButton(copilotJoystick, 8)
+            .whileActiveOnce(new DisableSoftLimit(turret));
         shootConfirmation = SmartDashboard.getBoolean("turret/shootConfirmation", true);
         // if (shootConfirmation) {
         //     new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)

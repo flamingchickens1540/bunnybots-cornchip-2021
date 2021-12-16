@@ -59,4 +59,9 @@ public class Turret extends SubsystemBase {
     public Command commandStop() {
         return new InstantCommand(this::disableMotors, this);
     }
+
+    public void setSoftLimit(boolean enabled) {
+        turretMotor.configReverseSoftLimitEnable(enabled);
+        turretMotor.configForwardSoftLimitEnable(enabled);
+    }
 }
