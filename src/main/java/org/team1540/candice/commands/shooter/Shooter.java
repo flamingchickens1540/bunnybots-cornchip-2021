@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;;
 
 public class Shooter extends SubsystemBase {
-    private final TalonSRX valveMotor = new TalonSRX(7);
+    private boolean valveOpen = false;
 
     public Shooter() {
         initMotors(NeutralMode.Brake);
@@ -28,6 +28,7 @@ public class Shooter extends SubsystemBase {
     }
 
     public void setState(boolean open) {
+        this.valveOpen = open;
         if (open) {
             valveMotor.set(ControlMode.PercentOutput, 1);
         } else {
@@ -41,6 +42,10 @@ public class Shooter extends SubsystemBase {
 
     public void openValve() {
         setState(true);
+    }
+
+    public boolean getValveOpen() {
+        return this.valveOpen;
     }
 
     public Command commandStop() {

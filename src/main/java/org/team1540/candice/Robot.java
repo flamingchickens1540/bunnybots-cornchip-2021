@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
     public void teleopInit() {
         robotContainer.driveTrain.setDefaultCommand(new TankDrive(robotContainer.driveTrain, robotContainer.driverController));
         robotContainer.turret.setDefaultCommand(new TurnTurret(robotContainer.turret, robotContainer.copilotJoystick));
-        robotContainer.pump.setDefaultCommand(new PumpCommand(robotContainer.pump, robotContainer.copilotJoystick));
+        robotContainer.pump.setDefaultCommand(new PumpCommand(robotContainer.pump, robotContainer.copilotJoystick,robotContainer.shooter));
     }
 
     @Override
