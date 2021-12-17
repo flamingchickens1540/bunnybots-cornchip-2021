@@ -5,13 +5,14 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import org.team1540.candice.Constants;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;;
 
 public class Pump extends SubsystemBase {
-    private final TalonSRX pumpMotor = new TalonSRX(8);
+    private final TalonSRX pumpMotor = new TalonSRX(Constants.Motors.pump);
 
     public Pump() {
         initMotors(NeutralMode.Brake);

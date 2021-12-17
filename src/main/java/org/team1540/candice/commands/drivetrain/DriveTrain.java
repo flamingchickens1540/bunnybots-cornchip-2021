@@ -5,15 +5,17 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
+import org.team1540.candice.Constants;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;;
 
 public class DriveTrain extends SubsystemBase {
-    private final TalonFX leftMotorFront = new TalonFX(4);
-    private final TalonFX leftMotorRear = new TalonFX(3);
-    private final TalonFX rightMotorFront = new TalonFX(6);
-    private final TalonFX rightMotorRear = new TalonFX(2);
+    private final TalonFX leftMotorFront = new TalonFX(Constants.Motors.Drive.leftFront);
+    private final TalonFX leftMotorRear = new TalonFX(Constants.Motors.Drive.leftRear);
+    private final TalonFX rightMotorFront = new TalonFX(Constants.Motors.Drive.rightFront);
+    private final TalonFX rightMotorRear = new TalonFX(Constants.Motors.Drive.rightRear);
 
     private final TalonFX driveMotors[] = { leftMotorFront, leftMotorRear, rightMotorFront, rightMotorRear };
     private final TalonFX leftDriveMotors[] = { leftMotorFront, leftMotorRear };
