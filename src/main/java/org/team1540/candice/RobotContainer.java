@@ -31,8 +31,6 @@ public class RobotContainer {
     public final Shooter shooter = new Shooter(NeutralMode.Brake);
     public final Pump pump = new Pump();
 
-    private boolean shootConfirmation;
-
     public RobotContainer() {
         // Configure the button bindings\
 
@@ -52,7 +50,6 @@ public class RobotContainer {
 
         new JoystickButton(copilotJoystick, 8)
             .whileActiveOnce(new DisableSoftLimit(turret));
-        shootConfirmation = SmartDashboard.getBoolean("turret/shootConfirmation", true);
         // if (shootConfirmation) {
         //     new JoystickButton(copilotJoystick, ButtonType.kTrigger.value)
         //         .and(new JoystickButton(copilotJoystick, 3))
