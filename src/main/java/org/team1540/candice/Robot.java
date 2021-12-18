@@ -7,7 +7,6 @@ import org.team1540.candice.commands.turret.TurnTurret;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 
 public class Robot extends TimedRobot {
     private RobotContainer robotContainer;
@@ -32,8 +31,6 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
         robotContainer.driveTrain.setDefaultCommand(new AvianDrive(robotContainer.driveTrain));
-        robotContainer.turret.setDefaultCommand(new InstantCommand(() -> {}));
-        robotContainer.pump.setDefaultCommand(new InstantCommand(() -> {}));
     }
 
     @Override
