@@ -4,6 +4,7 @@ import org.team1540.candice.Constants.DriveConstants;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class TankDrive extends CommandBase {
@@ -11,7 +12,7 @@ public class TankDrive extends CommandBase {
     private final XboxController driverController;
 
     private final double deadzone;
-    private final double speedMultiplier;
+    private double speedMultiplier;
 
     private double leftY;
     private double rightY;
@@ -30,7 +31,7 @@ public class TankDrive extends CommandBase {
         this.driveTrain = drivetrain;
         this.driverController = driver;
         this.deadzone = DriveConstants.deadzone;
-        this.speedMultiplier = DriveConstants.speedMultiplier;
+        this.speedMultiplier = -SmartDashboard.getNumber("drive/speedMultiplier", 0.5);
         addRequirements(drivetrain);
     }
 
@@ -44,6 +45,7 @@ public class TankDrive extends CommandBase {
 
     @Override
     public void execute() {
+        this.speedMultiplier = -SmartDashboard.getNumber("drive/speedMultiplier", 0.5);
         leftY = this.driverController.getY(Hand.kLeft);
         rightY = this.driverController.getY(Hand.kRight);
 

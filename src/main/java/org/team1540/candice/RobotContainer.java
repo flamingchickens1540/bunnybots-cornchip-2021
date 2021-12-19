@@ -62,6 +62,7 @@ public class RobotContainer {
 
     private void initSmartDashboard() {
         SmartDashboard.putNumber("turret/speedMinimum", SmartDashboard.getNumber("turret/speedMinimum", 0.1));
+        SmartDashboard.putNumber("drive/speedMultiplier", SmartDashboard.getNumber("drive/speedMultiplier", 0.5));
         SmartDashboard.putNumber("turret/disableButton", SmartDashboard.getNumber("turret/disableButton", 2));
         SmartDashboard.putBoolean("turret/shootConfirmation", SmartDashboard.getBoolean("turret/shootConfirmation", true));
         SmartDashboard.setDefaultBoolean("turret/shootConfirmation", true);
